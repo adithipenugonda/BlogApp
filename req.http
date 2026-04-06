@@ -1,0 +1,224 @@
+# ### User Register
+# POST http://localhost:4000/user-api/users
+# Content-Type: application/json
+
+# {
+#   "firstName": "Virat",
+#   "lastName": "Kohli",
+#   "email": "virat@gmail.com",
+#   "password": "1234",
+#   "profileImageUrl": "https://example.com/avatars/user.png"
+# }
+
+# ### User Login
+# POST http://localhost:4000/common-api/login
+# Content-Type: application/json
+
+# {
+#   "email": "virat@gmail.com",
+#   "password": "1234"
+ 
+# }
+
+# ### Author Register
+# POST http://localhost:4000/author-api/users
+# Content-Type: application/json
+
+# {
+#   "firstName": "Prabhas",
+#   "lastName": "Anushka",
+#   "email": "praba.author@example.com",
+#   "password": "12345",
+#   "profileImageUrl": "https://example.com/avatars/author.png"
+# }
+
+
+# ### Author Register
+# POST http://localhost:4000/author-api/users
+# Content-Type: application/json
+
+# {
+#   "firstName": "Prabhas",
+#   "lastName": "Anushka",
+#   "email": "praba.author@example.com",
+#   "password": "1234",
+#   "profileImageUrl": "https://example.com/avatars/author.png"
+# }
+
+# ### Author Login
+# POST http://localhost:4000/author-api/login
+# Content-Type: application/json
+
+# {
+#   "email": "praba.author@example.com",
+#   "password": "12345"
+  
+# }
+
+
+
+# ### Create article (AUTHOR)
+# POST http://localhost:4000/author-api/articles
+# Content-Type: application/json
+
+# {
+#   "author":"69ae7b1bcd27e3ddf113c45a",
+#   "title":"test2 article",
+#   "category":"programming",
+#   "content":"content of test2 article"
+# }
+
+
+
+# ###Read articles of a author
+# GET http://localhost:4000/author-api/articles/69ae82a688600871b56dfebc
+
+
+
+# ### Update article (AUTHOR)
+# PUT http://localhost:4000/author-api/articles
+# Content-Type: application/json
+
+# {
+#   "author":"6989799b7013502767d3f82b",
+#   "articleId":"698981d2b54ba14743e2e94a",
+#   "title":"test2 article updated",
+#   "category":"programming",
+#   "content":"content of test2 article updated"
+# }
+
+
+
+# ### Logout
+# GET http://localhost:4000/common-api/logout
+
+
+
+
+# ### Test res
+# GET http://localhost:4000/test
+
+# ###
+# GET http://localhost:4000/hello
+
+
+
+
+
+### User Register
+POST http://localhost:4000/user-api/users
+content-Type : application/json
+
+{
+    "firstName" : "Adithi",
+    "lastName" : "penugonda",
+    "email" : "adithiii@gmail.com",
+    "password" : "adithi123",
+    "profileImageUrl" : "https://example.com/avatars/user.png"
+}
+
+### User Login
+POST http://localhost:4000/user-api/authenticate
+Content-Type: application/json
+
+{
+    "email" : "adithiii@gmail.com",
+    "password" : "adithi123"
+}
+
+
+### Author Register
+POST http://localhost:4000/author-api/users
+content-Type : application/json
+
+{
+    "firstName" : "Shanmukh",
+    "lastName" : "sai",
+    "email" : "shanmukhhh@gmail.com",
+    "password" : "shanmukh123",
+    "profileImageUrl" : "https://example.com/avatars/author.png"
+}
+
+### Author Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email" : "shanmukhhh@gmail.com",
+    "password" : "shanmukh123"
+ 
+}
+
+
+
+# ### Create article 
+# POST http://localhost:4000/author-api/articles
+# Content-Type: application/json
+# Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWFlODU5ZTQ1YTE3MGY4MzBkZDdkYWIiLCJyb2xlIjoiQVVUSE9SIiwiZW1haWwiOiJzaGFubXVraGhoQGdtYWlsLmNvbSIsImlhdCI6MTc3MzA0NTUxMCwiZXhwIjoxNzczMDQ5MTEwfQ.D9jTj6wJW_aki6hRcqmEOxM4G_vQm3SuHP9ZF6D9UBY
+
+# {
+#   "author": "69ae859e45a170f830dd7dab",
+#   "title": "My Life",
+#   "category": "Life",
+#   "content": "content of My Life article"
+# }
+
+
+### create article
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWFlODU5ZTQ1YTE3MGY4MzBkZDdkYWIiLCJyb2xlIjoiQVVUSE9SIiwiZW1haWwiOiJzaGFubXVraGhoQGdtYWlsLmNvbSIsImlhdCI6MTc3MzA0NTUxMCwiZXhwIjoxNzczMDQ5MTEwfQ.D9jTj6wJW_aki6hRcqmEOxM4G_vQm3SuHP9ZF6D9UBY
+
+{
+  "title": "My Life",
+  "category": "Life",
+  "content": "content of My Life article"
+}
+
+
+### read article
+GET http://localhost:4000/author-api/articles/6989affda90e61dfb9e1f496
+
+
+
+
+### update article 
+PUT  http://localhost:4000/author-api/articles/6989b19de69c88e7b0aeab2d
+Content-Type: application/json
+
+{
+    "author" : "6989affda90e61dfb9e1f496",
+    "title" : "My Lifee",
+    "category" : "Life",
+    "content" : "content of My Life article"
+}
+
+### Delete article
+PATCH http://localhost:4000/author-api/articles/6989757e2faeac5dc1d85442
+
+
+### logout
+POST http://localhost:4000/logout
+
+
+
+### Test req
+GET http://localhost:4000/test
+
+
+
+
+### Block user
+PUT http://localhost:4000/admin-api/block-user/698ac9138e8d36ff9da5633a
+
+
+### Unblock user
+PUT http://localhost:4000/admin-api/unblock-user/698ac9138e8d36ff9da5633a
+
+
+
+
+
+
+
+
