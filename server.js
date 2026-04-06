@@ -13,7 +13,11 @@ config(); //process.env
 //Create express application
 const app = exp();
 //use cors middleware
-app.use(cors({ origin: ["http://localhost:5173"], credentials:true }));
+// app.use(cors({ origin: ["http://localhost:5173"], credentials:true }));
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 //add body parser middleware
 app.use(exp.json());
 //add cookie parser middleware
@@ -39,6 +43,16 @@ const connectDB = async () => {
 };
 
 connectDB();
+
+import path from "path";
+
+const __dirname = path.resolve();
+
+app.use(exp.static(path.join(__dirname, "frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
+});
 
 //dealing with invalid path
 app.use((req, res, next) => {
@@ -95,6 +109,8 @@ app.use((err, req, res, next) => {
   console.log("err :", err);
   res.status(finalStatus).json(response);
 });
+
+
 
 
 // app.use((err, req, res, next) => {
